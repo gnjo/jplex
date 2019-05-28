@@ -176,9 +176,8 @@ TinySegmenter.prototype.segment = function(input) {
   return result;
 }
  
- var segmenter = new TinySegmenter();  // インスタンス生成
- //var segs = segmenter.segment(data);  // 単語の配列が返る
- root.jplex=segmenter.segment.bind(segmenter)
+ var segmenter = new TinySegmenter();
+ root.jplex=segmenter.segment.bind(segmenter);
  
  let is={}
 is.katakanaOnly=(d)=>{return /^[\u30a0-\u30ff]+$/.test(d)}
