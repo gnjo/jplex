@@ -9,6 +9,8 @@ jplex2(text) //return html
 span.kata{color:#f26}
 span.kanji{color:#2cc}
 span.kanji2{color:#cc2}
-span.hira{color:#ccc}
+span.hira{}
 span.sijigo{color:#f26}
+span.setuzokusi{color:#f26}
+span.tu{color:#f26}
 ```
