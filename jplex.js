@@ -192,10 +192,7 @@ let calc=(d)=>{
  if(is.hiraganaOnly(d))return f('hira',d)
  return d
 } 
- root.jplex2=(data)=>{
-   var segs = root.jplex(data);  // 単語の配列が返る
-   return segs.map(d=>calc(d)).join('')
- }
+ root.jplex2=(data)=>{return root.jplex(data).map(d=>calc(d)).join('')}
 
  
 })(this);
