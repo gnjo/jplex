@@ -194,11 +194,11 @@ let re=new RegExp(data.trim().split(/,|\n/).map(d=>'^'+d).join('|'))
 }
 let calc=(d)=>{
  let f=(cls,d)=>`<span class="${cls}">${d}</span>`
+ if(is.sijigoOnly(d))return f('sijigo',d) 
  if(is.katakanaOnly(d))return f('kata',d)
  if(is.kanjiOnly(d))return f('kanji',d)
  if(is.kanji(d))return f('kanji2',d)
  if(is.hiraganaOnly(d))return f('hira',d)
- if(is.sijigoOnly(d))return f('sijigo',d)
  
  return d
 } 
