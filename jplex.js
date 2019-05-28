@@ -184,12 +184,22 @@ is.katakanaOnly=(d)=>{return /^[\u30a0-\u30ff]+$/.test(d)}
 is.kanjiOnly=(d)=>{return /^[\u3005-\u3006\u30e0-\u9fcf]+$/.test(d)}
 is.kanji=(d)=>{return /[\u3005-\u3006\u30e0-\u9fcf]/.test(d)}
 is.hiraganaOnly=(d)=>{return /^[\u3040-\u309f]+$/.test(d)}
+is.sijigoOnly=(d)=>{
+let data=`これ,ここ,こっち,こちら,こいつ,こなた,この,こう,こんな
+それ,そこ,そっち,そちら,そいつ,そなた,その,そう,そんな
+あれ,あそこ,あっち,あちら,あいつ,あなた,あの,ああ,あんな
+どれ,どこ,どっち,どちら,どいつ,どなた,どの,どう,どんな`
+let re=new RegExp(data.trim().split(/,|\n/).map(d=>'^'+d).join('|'))
+ return re.test(d)
+}
 let calc=(d)=>{
  let f=(cls,d)=>`<span class="${cls}">${d}</span>`
  if(is.katakanaOnly(d))return f('kata',d)
  if(is.kanjiOnly(d))return f('kanji',d)
  if(is.kanji(d))return f('kanji2',d)
  if(is.hiraganaOnly(d))return f('hira',d)
+ if(is.sijigoOnly(d))return f('sijigo',d)
+ 
  return d
 } 
  root.jplex2=(data)=>{return root.jplex(data).map(d=>calc(d)).join('')}
