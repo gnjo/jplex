@@ -10,4 +10,5 @@ span.kata{color:#f26}
 span.kanji{color:#2cc}
 span.kanji2{color:#cc2}
 span.hira{color:#ccc}
+span.sijigo{color:#f26}
 ```
