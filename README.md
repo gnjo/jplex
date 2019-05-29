@@ -20,7 +20,7 @@ let options={
 keyword:{num:1,name:'keyword',data:'...,...'}
 ,tu:{num:2,name:'tu',data:'...,...'}
 ,setuzokusi:{num:3,name:'setuzokusi',data:'...,...'}
-,sijigo:{num4,name:'sijigo',data:'...,...'}
+,sijigo:{num:4,name:'sijigo',data:'...,...'}
 }
 //
 jplex2(text,options)
