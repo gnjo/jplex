@@ -184,6 +184,7 @@ is.katakanaOnly=(d)=>{return /^[\u30a0-\u30ff]+$/.test(d)}
 is.kanjiOnly=(d)=>{return /^[\u3005-\u3006\u30e0-\u9fcf]+$/.test(d)}
 is.kanji=(d)=>{return /[\u3005-\u3006\u30e0-\u9fcf]/.test(d)}
 is.hiraganaOnly=(d)=>{return /^[\u3040-\u309f]+$/.test(d)}
+/*
 is.tu=(d)=>{
 let data=`っ`
 let re=new RegExp(data.trim().split(/,|\n/).map(d=>`${d}`).join('|'))
@@ -212,13 +213,27 @@ let data=`だから,そこで,従って,故に,それ故,すると,それなら,
 さて,処で,ところで`
 let re=new RegExp(data.trim().split(/,|\n/).map(d=>`^${d}+$`).join('|'))
  return re.test(d)
- /*が、は無し*/
+ //が、は無し
 }
-let calc=(d)=>{
+*/
+let calc=(d,opt)=>{
  let f=(cls,d)=>`<span class="${cls}">${d}</span>`
+ let obj=Object.keys(opt).map(d=>opt[d]).sort((a,b)=>a.num-b.num)
+ for(let i=0;i<obj.length;i++){
+  let col=obj[i];
+  let is=(d)=>{
+   if(!col.data) return false;
+   let data=col.data
+   let re=new RegExp(data.trim().split(/,|\n/).map(d=>`${d}`).join('|'))
+   return re.test(d)
+  }
+  if(is(d))return f(col.cls,d)  
+ } 
+ /*
  if(is.tu(d))return f('tu',d) 
  if(is.setuzokusiOnly(d))return f('setuzokusi',d)
  if(is.sijigoOnly(d))return f('sijigo',d) 
+ */
  if(is.katakanaOnly(d))return f('kata',d)
  if(is.kanjiOnly(d))return f('kanji',d)
  if(is.kanji(d))return f('kanji2',d)
@@ -226,7 +241,6 @@ let calc=(d)=>{
  
  return d
 } 
- root.jplex2=(data)=>{return root.jplex(data).map(d=>calc(d)).join('')}
-
+ root.jplex2=(data,opt)=>{return root.jplex(data).map(d=>calc(d,opt||{})).join('')}
  
 })(this);
