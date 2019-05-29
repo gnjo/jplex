@@ -17,10 +17,10 @@ span.tu{color:#f26}
 ```
 ```js
 let options={
-keyword:{num:1,name:'keyword',data:'...,...'}
-,tu:{num:2,name:'tu',data:'...,...'}
-,setuzokusi:{num:3,name:'setuzokusi',data:'...,...'}
-,sijigo:{num:4,name:'sijigo',data:'...,...'}
+keyword:{num:1,cls:'keyword',data:'...,...'}
+,tu:{num:2,cls:'tu',data:'...,...'}
+,setuzokusi:{num:3,cls:'setuzokusi',data:'...,...'}
+,sijigo:{num:4,cls:'sijigo',data:'...,...'}
 }
 //
 jplex2(text,options)
