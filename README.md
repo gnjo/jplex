@@ -1,7 +1,7 @@
 # jplex
 jplex japanese word lexer
 ```
-jplex(text,opt) //return original array
+jplex(text,opt) //return html
 ```
 css
 ```css
