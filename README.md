@@ -15,7 +15,7 @@ span.sijigo{color:#f26}
 span.setuzokusi{color:#f26}
 span.tu{color:#f26}
 ```
-opt
+opt wordcep ```|```
 ```js
 let m=[
  {cls:'kata',re:'[\u30a0-\u30ff]{1,20}'}
