@@ -17,6 +17,10 @@ span.tu{color:#f26}
 ```
 opt
 ```js
+let m=[
+ {cls:'kata',re:'[\u30a0-\u30ff]{1,20}'}
+ ,{cls:'keyword',re:'明日ノ明日|牛乳'}
+]
 ```
 
 # usage
